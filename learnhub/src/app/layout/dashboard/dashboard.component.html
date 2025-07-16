@@ -1,0 +1,21 @@
+<h2 class="text-2xl font-bold text-gray-800 mb-4">Instructor Dashboard</h2>
+<p class="text-gray-600 mb-6">Welcome back! Here’s what’s happening with your courses.</p>
+
+<!-- Dashboard Summary Cards -->
+<app-dashboard-cards></app-dashboard-cards>
+
+<!-- Main Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+  <!-- Left Column -->
+  <div class="lg:col-span-2 space-y-6">
+    <app-recent-activity></app-recent-activity>
+    <app-course-performance></app-course-performance>
+  </div>
+
+  <!-- Right Column -->
+  <div class="space-y-6">
+    <app-quick-actions></app-quick-actions>
+    <app-live-sessions></app-live-sessions>
+    <app-recent-certificates></app-recent-certificates>
+  </div>
+</div>

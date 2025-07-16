@@ -1,0 +1,19 @@
+.bg-white {
+  background: white;
+}
+
+.shadow {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}

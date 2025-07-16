@@ -1,0 +1,23 @@
+.bg-white {
+  background: white;
+}
+
+.shadow {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.font-bold {
+  font-weight: 700;
+}

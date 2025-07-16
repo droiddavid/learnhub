@@ -1,0 +1,40 @@
+<div class="player-container">
+  <div class="lesson-sidebar">
+    <h3>Lessons</h3>
+    <ul>
+      <li *ngFor="let lesson of lessons; let i = index"
+          [class.active]="i === currentLessonIndex"
+          (click)="currentLessonIndex = i">
+        {{ lesson.title }}
+        <span *ngIf="lesson.isCompleted">✅</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lesson-content">
+    <h2>{{ currentLesson.title }}</h2>
+
+    <div *ngIf="currentLesson.contentType === 'video'">
+      <video width="100%" controls>
+        <source [src]="currentLesson.contentUrl" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div *ngIf="currentLesson.contentType === 'pdf'">
+      <a [href]="currentLesson.contentUrl" target="_blank" download>Download PDF</a>
+    </div>
+
+    <div *ngIf="currentLesson.contentType === 'text'">
+      <p>{{ currentLesson.contentUrl }}</p>
+    </div>
+
+    <div class="actions">
+      <button (click)="prevLesson()" [disabled]="currentLessonIndex === 0">Previous</button>
+      <button (click)="nextLesson()" [disabled]="currentLessonIndex === lessons.length - 1">Next</button>
+      <button (click)="markAsCompleted()">Mark as Complete</button>
+    </div>
+
+    <p class="progress">Progress: {{ completionRate() }}%</p>
+  </div>
+</div>

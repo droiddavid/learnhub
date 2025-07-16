@@ -1,0 +1,54 @@
+.player-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.lesson-sidebar {
+  width: 250px;
+  background-color: #f8fafc;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.lesson-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lesson-sidebar li {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lesson-sidebar li.active {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.lesson-content {
+  flex: 1;
+}
+
+.actions button {
+  margin-right: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions button:disabled {
+  background-color: #94a3b8;
+}
+
+.progress {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}

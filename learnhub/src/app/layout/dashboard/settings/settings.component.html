@@ -1,0 +1,27 @@
+<div class="settings-container">
+  <h2>Account Settings</h2>
+
+  <form (ngSubmit)="saveSettings()" #settingsForm="ngForm">
+    <label>
+      Name:
+      <input type="text" [(ngModel)]="profile.name" name="name" required />
+    </label>
+
+    <label>
+      Email:
+      <input type="email" [(ngModel)]="profile.email" name="email" required />
+    </label>
+
+    <label>
+      Bio:
+      <textarea [(ngModel)]="profile.bio" name="bio" rows="4"></textarea>
+    </label>
+
+    <label class="checkbox">
+      <input type="checkbox" [(ngModel)]="profile.notifications" name="notifications" />
+      Receive notifications about course activity
+    </label>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</div>

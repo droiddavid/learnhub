@@ -1,0 +1,10 @@
+<div class="analytics-container">
+  <h2>Course Analytics</h2>
+  <div class="metrics-grid">
+    <div class="metric" *ngFor="let metric of metrics">
+      <h3>{{ metric.value }}</h3>
+      <p class="label">{{ metric.label }}</p>
+      <p class="description">{{ metric.description }}</p>
+    </div>
+  </div>
+</div>

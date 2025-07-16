@@ -1,0 +1,33 @@
+<div class="courses-container">
+  <div class="header">
+    <h2>My Courses</h2>
+    <button class="new-course" routerLink="/dashboard/courses/new">+ New Course</button>
+  </div>
+
+  <input type="text" placeholder="Search courses..." [(ngModel)]="searchQuery" />
+
+  <table class="courses-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Students</th>
+        <th>Earnings</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of filteredCourses()">
+        <td>{{ course.title }}</td>
+        <td>{{ course.status }}</td>
+        <td>{{ course.students }}</td>
+        <td>${{ course.earnings }}</td>
+        <td>
+          <button (click)="editCourse(course.id)">Edit</button>
+          <button (click)="duplicateCourse(course.id)">Duplicate</button>
+          <button (click)="deleteCourse(course.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

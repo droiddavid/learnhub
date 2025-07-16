@@ -1,0 +1,46 @@
+<!-- course-builder.component.html -->
+<div class="course-builder">
+  <h2>Create or Edit Course</h2>
+
+  <nav class="tab-nav">
+    <button (click)="currentStep = 'basics'" [class.active]="currentStep === 'basics'">Basics</button>
+    <button (click)="currentStep = 'curriculum'" [class.active]="currentStep === 'curriculum'">Curriculum</button>
+    <button (click)="currentStep = 'media'" [class.active]="currentStep === 'media'">Media</button>
+    <button (click)="currentStep = 'pricing'" [class.active]="currentStep === 'pricing'">Pricing</button>
+    <button (click)="currentStep = 'publish'" [class.active]="currentStep === 'publish'">Publish</button>
+  </nav>
+
+  <section *ngIf="currentStep === 'basics'">
+    <label>Course Title</label>
+    <input [(ngModel)]="course.title" placeholder="Enter course title" />
+
+    <label>Description</label>
+    <textarea [(ngModel)]="course.description" placeholder="Enter description"></textarea>
+  </section>
+
+  <section *ngIf="currentStep === 'curriculum'">
+    <h3>Lessons</h3>
+    <div *ngFor="let lesson of course.lessons; let i = index">
+      <input [(ngModel)]="lesson.title" placeholder="Lesson title" />
+      <textarea [(ngModel)]="lesson.content" placeholder="Lesson content"></textarea>
+      <button (click)="removeLesson(i)">Remove</button>
+    </div>
+    <button (click)="addLesson()">Add Lesson</button>
+  </section>
+
+  <section *ngIf="currentStep === 'media'">
+    <label>Thumbnail URL</label>
+    <input [(ngModel)]="course.thumbnailUrl" placeholder="Image URL or upload" />
+  </section>
+
+  <section *ngIf="currentStep === 'pricing'">
+    <label>Price ($)</label>
+    <input type="number" [(ngModel)]="course.price" />
+  </section>
+
+  <section *ngIf="currentStep === 'publish'">
+    <button (click)="saveDraft()">Save as Draft</button>
+    <button (click)="publishCourse()">Publish Course</button>
+  </section>
+</div>
+
